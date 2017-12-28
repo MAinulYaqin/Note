@@ -117,3 +117,15 @@ __result__
 console.log(palindrome('Kasur, Rusak')) = true;
 console.log(palindrome('Ini tentu salah')) = false;
 ```
+
+## Hitung huruf vokal a,i,u,e,o
+
+```JavaScript
+function vokalWordCount(str) {
+  return (str.match(/[aiueo]/g) || [])
+}
+
+__result__
+console.log(vokalWordCount('Halo panggil saya AinulBedjo')) =
+(10) ["a", "o", "a", "i", "a", "a", "i", "u", "e", "o"]
+```
