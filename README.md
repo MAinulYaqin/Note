@@ -129,3 +129,26 @@ __result__
 console.log(vokalWordCount('Halo panggil saya AinulBedjo')) =
 (10) ["a", "o", "a", "i", "a", "a", "i", "u", "e", "o"]
 ```
+
+## ROT13 chaesar chiper
+
+```JavaScript
+var str = `Lb, fb unir lbh orra cynlvat gung arj Zrfbcrgf tnzr? Gubfr arj Zrtnybalpuvqnr naq Oenqlcbqvqnr gurl nqqrq ner cerggl pbby. Npghnyyl, V jbhyq tb nf sne nf fnlvat gung vg vf abj zl yvsr'f qrnerfg nzovgvba gb bognva n "Vasyngnoyr Fybgu Zbafgre`
+var ouput = ''
+
+for (var i = 0; i < str.length; i++) {
+	var c = str[i];
+
+	if (c.match(/[a-zA-Z]/gi)) {
+		var code = str.charCodeAt(i)
+
+		if ((code >= 65) && (code <= 90)) {
+			c = String.fromCharCode(((code - 65 + 13) % 26) + 65);
+		} else if ((code >= 97) && (code <= 122)) {
+			c = String.fromCharCode(((code - 97 + 13) % 26) + 97);
+		}
+	}
+	ouput += c;
+}
+console.log(ouput)
+```
